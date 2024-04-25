@@ -1,13 +1,17 @@
 /* eslint-disable prettier/prettier */
 import { Module } from '@nestjs/common';
 
-import { TypeOrmModule } from '@nestjs/typeorm';
+import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MovieModule } from './app/movie/movie.module';
+import { UserModule } from './app/user/user.module';
+import { AuthModule } from './auth/auth.module';
+import { AuthController } from './auth/auth.controller';
 
 
 @Module({
   imports: [
+    ConfigModule.forRoot(),
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       inject: [ConfigService],
@@ -22,10 +26,12 @@ import { MovieModule } from './app/movie/movie.module';
         synchronize: true,
       })
 
-    }),
+    } as TypeOrmModuleOptions ),
     MovieModule,
+    UserModule,
+    AuthModule,
   ],
-  controllers: [],
+  controllers: [AuthController],
   providers: [],
 })
 

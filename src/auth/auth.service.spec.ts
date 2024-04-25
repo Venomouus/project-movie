@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
 import { Test, TestingModule } from '@nestjs/testing';
-import { MovieService } from './movie.service';
+import { AuthService } from './auth.service';
 
-describe('MovieService', () => {
-  let service: MovieService;
+describe('AuthService', () => {
+  let service: AuthService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [MovieService],
+      providers: [AuthService],
     }).compile();
 
-    service = module.get<MovieService>(MovieService);
+    service = module.get<AuthService>(AuthService);
   });
 
   it('should be defined', () => {

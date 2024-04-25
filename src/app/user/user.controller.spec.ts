@@ -1,16 +1,16 @@
 /* eslint-disable prettier/prettier */
 import { Test, TestingModule } from '@nestjs/testing';
-import { MovieController } from './movie.controller';
+import { UserController } from './user.controller';
 
-describe('MovieController', () => {
-  let controller: MovieController;
+describe('UserController', () => {
+  let controller: UserController;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      controllers: [MovieController],
+      controllers: [UserController],
     }).compile();
 
-    controller = module.get<MovieController>(MovieController);
+    controller = module.get<UserController>(UserController);
   });
 
   it('should be defined', () => {
