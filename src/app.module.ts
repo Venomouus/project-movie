@@ -6,7 +6,6 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MovieModule } from './app/movie/movie.module';
 import { UserModule } from './app/user/user.module';
 import { AuthModule } from './auth/auth.module';
-import { AuthController } from './auth/auth.controller';
 
 
 @Module({
@@ -27,11 +26,11 @@ import { AuthController } from './auth/auth.controller';
       })
 
     } as TypeOrmModuleOptions ),
-    MovieModule,
     UserModule,
     AuthModule,
+    MovieModule,
   ],
-  controllers: [AuthController],
+  controllers: [],
   providers: [],
 })
 

@@ -19,7 +19,7 @@ export class UserService {
     });
   }
 
-  async findOneOrFail(id: string) { // Use id directly as argument
+  async findOneOrFail(id: string) { 
     try {
       return await this.userRepository.findOneOrFail({ where: { id } });
     } catch (error) {
